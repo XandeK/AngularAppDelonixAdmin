@@ -10,6 +10,10 @@ import { routing } from './app.routing';
 import { LoyaltyProductsListComponent } from './loyalty-products-list/loyalty-products-list.component';
 import { NewProductLoyaltyComponent } from './new-product-loyalty/new-product-loyalty.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { RegisterComponent } from './register/register.component';
+import { RoomRateComponent } from './room-rate/room-rate.component';
+import { NewRoomRateComponent } from './new-room-rate/new-room-rate.component';
 
 
 @NgModule({
@@ -17,7 +21,11 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     AppComponent,
     LoyaltyProductsListComponent,
     NewProductLoyaltyComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    SidenavComponent,
+    RegisterComponent,
+    RoomRateComponent,
+    NewRoomRateComponent
   ],
   imports: [
     BrowserModule,

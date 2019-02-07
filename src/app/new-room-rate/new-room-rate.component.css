@@ -1,0 +1,15 @@
+form{
+    max-width: 50%;
+    margin-left: 25%;
+}
+
+#roomRateBtn{
+    border-radius: 10px;
+    background: #8B6FC9;
+    color: white;
+    width: 300px;
+}
+
+#rateForm{
+    text-align: center;
+}

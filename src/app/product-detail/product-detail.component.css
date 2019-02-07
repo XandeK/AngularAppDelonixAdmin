@@ -2,3 +2,26 @@
     text-align: center;
     padding-top: 10%;
 }
+#buttons{
+    padding-top:15px;
+}
+
+#delete{
+    margin-left:36%;
+    float: left;
+    max-width: 10%;
+    border-radius: 15px;
+    background-color: #8B6FC9;
+    color: white;
+    font-weight: bold;
+}
+
+#update{
+    margin-left:10%;
+    float: left;
+    max-width: 10%;
+    border-radius: 15px;
+    background-color: #8B6FC9;
+    color: white;
+    font-weight: bold;
+}

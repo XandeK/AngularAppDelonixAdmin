@@ -1,0 +1,27 @@
+
+<div id="rateForm">
+
+<h1><b><u> New Room type & Rate</u></b></h1>
+
+<form [formGroup]="myForm" novalidate (ngSubmit)="newRoomRate(myForm)">
+
+  <p><b>Name of Room:</b></p>
+  <p><input class=form-control formControlName="roomName" id="roomName" placeholder="Name of Room" /></p>
+
+  <p><b>Room Type:</b></p>
+  <select class=form-control formControlName="roomType" id="roomType" placeholder="Select Access Control">
+    <option value="receptionist">Single Bed Room</option>
+    <option value="manager">Dual Bed Room</option>
+    <option value="fullaccesss">Deluxe Bed Room</option>
+  </select>
+
+  <p><b>Room Rate:</b></p>
+  <p>$ <input class=form-control formControlName="roomRate" id="roomRate" placeholder="" /> /night</p>
+
+
+  <br>
+  <br>
+  <p><button id="roomRateBtn" class="btn btn-primary" type="submit">CREATE</button></p>
+</form>
+
+</div>

@@ -22,4 +22,9 @@ export class LoyaltyService {
   findByName(productName: string) {
     return this.http.get('./api/findByName/'+ productName);
     }
+
+  // Create new room rate for the pricing per night of the hotel rooms
+    newRoomRate(roomName: string, roomType : string, roomRate : string){
+    return this.http.post<any[]>('./api/newRoomRate/'+ roomName + '/' +  roomType + '/' + roomRate , {'roomName': roomName, 'roomType': roomType, 'roomRate': roomRate });
+  }
 }

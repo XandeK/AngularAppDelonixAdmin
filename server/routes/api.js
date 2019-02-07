@@ -26,6 +26,23 @@ router.get('/findByName/:productName', function (req, res) {
     db.collection('loyaltyproducts').find({ "productName": req.params.productName }).toArray((err, results) => { res.send(results) });
 });
 
+router.get('/regAdmin/:name/:email/:password/:contact/:role', (req, res) => {
+    bcrypt.hash(req.params.password, BCRYPT_SALT_ROUNDS, function (err, hash) {
+        db.collection('admin').insertOne({ "name": req.params.name, "email": req.params.email, "password": hash, "contact": req.params.contact, "role": req.params.role }, (err, result) => {
+        });
+
+    });
+})
+
+router.post('/newRoomRate/:roomName/:roomType/:roomRate', (req, res) => {
+    db.collection('roomrate').insertOne({roomName: req.params.roomName, roomType: req.params.roomType, roomRate: req.params.roomRate}, (err, result) => {
+        if (err) 
+        return console.log(err);
+        // else
+        // return res.send('1');
+    });
+});
+
 
 
 module.exports = router;
