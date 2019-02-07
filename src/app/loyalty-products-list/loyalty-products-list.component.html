@@ -1,3 +1,33 @@
-<p>
-  loyalty-products-list works!
-</p>
+<div id="topNav">
+    <div id="textbox">
+        <label>
+            <input type="text" class="form-control" style="width: 1000px; border-radius: 0%; text-align: center; font-weight: bold;" placeholder="Search for Product!" />
+        </label>
+    </div>
+    <div id="createBtn">
+        <button class="form-control" (click)="createProduct"><b> + CREATE NEW </b></button>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div id="dispAll">
+
+    <ul id="Grid">
+        <li>
+            <div id="card" class="card" (click)="viewProduct" style="width: 18rem;">
+                <img class="card-img-top" src="../../assets/admin_logo.PNG">
+                <div class="card-body">
+                    <h5 class="card-title">trash</h5>
+                    <h6 id="test " class="card-text">Type: </h6>
+                    <!-- <button class="btn" (click)="viewProfile(c.name)" style="border-radius:25px; background:aquamarine">VIEW
+                        PROFILE</button> -->
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

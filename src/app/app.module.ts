@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { LoyaltyProductsListComponent } from './loyalty-products-list/loyalty-products-list.component';
 
 import { routing } from './app.routing';
+import { NewProductLoyaltyComponent } from './new-product-loyalty/new-product-loyalty.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoyaltyProductsListComponent
+    LoyaltyProductsListComponent,
+    NewProductLoyaltyComponent
   ],
   imports: [
     BrowserModule,
