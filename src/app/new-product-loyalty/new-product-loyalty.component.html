@@ -1,3 +1,22 @@
-<p>
-  new-product-loyalty works!
-</p>
+<div id="createProduct">
+  
+  <h1><u>Create New Product</u></h1>
+  <form [formGroup]="myForm" novalidate (ngSubmit)="createProduct(myForm)">
+
+    <p><b>File Location of Product Image:</b></p>
+    <p><input class=form-control formControlName="productImage" id="productImage" placeholder="Directory of Product" /></p>
+
+    <p><b>Name of Product:</b></p>
+    <p><input class=form-control formControlName="productName" id="productName" placeholder="The name of Product" /></p>
+
+    <p><b>Cost:</b></p>
+    <p><input class=form-control formControlName="productCost" id="productCost" placeholder="Amt of loyalty points to redeem Product" /></p>
+
+    <p><b>Product Description:</b></p>
+    <p><input class=form-control formControlName="productDesc" id="productDesc" placeholder="Description of product" /></p>
+    <br>
+    <br>
+    <p><button id="loginBtn" class="btn btn-primary" type="submit">CREATE PRODUCT</button></p>
+  </form>
+
+</div>

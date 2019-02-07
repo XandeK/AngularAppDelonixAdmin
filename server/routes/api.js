@@ -9,4 +9,23 @@ if (err) return console.log(err)
 db = database.db('delonix');
 });
 
+router.post('/createProduct/:productImage/:productName/:productCost/:productDesc', (req, res) => {
+    db.collection('loyaltyproducts').insertOne({productImage: req.params.productImage, productName: req.params.productName, productCost: req.params.productCost, productDesc: req.params.productDesc}, (err, result) => {
+        if (err) 
+        return console.log(err);
+        // else
+        // return res.send('1');
+    });
+});
+
+router.get('/getAllProducts', function (req, res) {
+    db.collection('loyaltyproducts').find({}).toArray((err, results) => { res.send(results) });
+});
+
+router.get('/findByName/:productName', function (req, res) {
+    db.collection('loyaltyproducts').find({ "productName": req.params.productName }).toArray((err, results) => { res.send(results) });
+});
+
+
+
 module.exports = router;

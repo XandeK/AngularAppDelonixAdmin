@@ -88,6 +88,10 @@ div, ul, li{
     width: 13%;
   }
 
+  #button:hover{
+    cursor: pointer;
+  }
+
   #createBtn button{
     background: #8B6FC9;
     color: white;

@@ -1,12 +1,20 @@
 <div id="topNav">
+
     <div id="textbox">
+
         <label>
-            <input type="text" class="form-control" style="width: 1000px; border-radius: 0%; text-align: center; font-weight: bold;" placeholder="Search for Product!" />
+
+            <input type="text" class="form-control" style="width: 1000px; border-radius: 0%; text-align: center; font-weight: bold;" placeholder="SEARCH FOR A PRODUCT" />
+
         </label>
     </div>
+
     <div id="createBtn">
-        <button class="form-control" (click)="createProduct"><b> + CREATE NEW </b></button>
+
+        <button class="form-control" id="button"  routerLink ="/newProduct"><b> + CREATE NEW </b></button>
+
     </div>
+
 </div>
 
 <br>
@@ -18,16 +26,24 @@
 <div id="dispAll">
 
     <ul id="Grid">
-        <li>
-            <div id="card" class="card" (click)="viewProduct" style="width: 18rem;">
-                <img class="card-img-top" src="../../assets/admin_logo.PNG">
+
+        <li *ngFor="let c of results">
+
+            <div id="card" class="card" (click)="viewProduct(c.productName)" style="width: 18rem;">
+
+                <img class="card-img-top" src="../../assets/{{c.productImage}}">
+
                 <div class="card-body">
-                    <h5 class="card-title">trash</h5>
-                    <h6 id="test " class="card-text">Type: </h6>
-                    <!-- <button class="btn" (click)="viewProfile(c.name)" style="border-radius:25px; background:aquamarine">VIEW
-                        PROFILE</button> -->
+
+                    <h5 class="card-title" style="padding-top:10px;">{{ c.productName }}</h5>
+                    <h6 id="test " class="card-text" style="padding-top:10px;">Cost:{{ c.productCost }}</h6>
+
                 </div>
+
             </div>
+
         </li>
+
     </ul>
+
 </div>

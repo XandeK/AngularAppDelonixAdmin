@@ -1,0 +1,18 @@
+#createProduct form p{
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 25px;
+}
+
+#createProduct{
+    text-align: center;
+}
+
+#loginBtn{
+    width:50%;
+    border-radius: 15px;
+    background: #8B6FC9;
+    color: white;
+    font-weight: bold;
+    border:none;
+}
