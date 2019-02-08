@@ -1,0 +1,16 @@
+
+
+#loginForm{
+    text-align:center;
+}
+
+#loginPage{
+    margin-left:10%;
+    margin-right:30%;
+    text-align: center;
+    height: max-content;
+    border: 2px solid #6C05F1;
+    margin-top:5%;
+    border-radius: 10px;
+    padding: 100px;
+}

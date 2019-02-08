@@ -1,3 +1,23 @@
-<p>
-  login works!
-</p>
+<div id="loginPage">
+  <img src="../../assets/delonix_logo.png">
+  <br>
+  <br>
+  <br>
+<h2>LOGIN</h2>
+<br>
+<br>
+
+<div id="loginForm">
+  <form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit(myForm)">
+
+      <p><input class=form-control formControlName="email" id="email" placeholder="E-mail"/></p>
+      <br>
+      
+      <p><input type="password" class=form-control formControlName="mobilenumber" id="mobilenumber" placeholder="Your password" /></p>
+      <br><br>
+      <p><button id="loginBtn" class="btn btn-primary" type="submit" >LOGIN</button></p>
+      </form>
+
+</div>
+<div id="expand"></div>
+</div>

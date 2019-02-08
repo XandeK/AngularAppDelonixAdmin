@@ -37,4 +37,9 @@ export class LoyaltyService {
   deleteRoom(roomName: string) {
     return this.http.delete<any[]>('/api/deleteRoom/' + roomName);
   }
+
+  //authenticate admin
+  authUser(email: string, mobilenumber: string) {
+    return this.http.get('/api/authuser/' + email + "/" + mobilenumber);
+  }
 }

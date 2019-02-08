@@ -9,6 +9,8 @@ if (err) return console.log(err)
 db = database.db('delonix');
 });
 
+// xande functions
+
 router.post('/createProduct/:productImage/:productName/:productCost/:productDesc', (req, res) => {
     db.collection('loyaltyproducts').insertOne({productImage: req.params.productImage, productName: req.params.productName, productCost: req.params.productCost, productDesc: req.params.productDesc}, (err, result) => {
         if (err) 
@@ -57,6 +59,29 @@ router.route('/deleteRoom/:roomName').delete(function (req, res) {
     //res.redirect("http://localhost:3000/login");
 });
 
+router.get('/authuser/:email/:mobilenumber', (req, res2) => {
+
+    var email = req.params.email;
+    var mobilenumber = req.params.mobilenumber;
+
+    db.collection('staffrecord').findOne({ "email": email }, { mobilenumber: 1, _id: 0 }, function (err, result) {
+        if (err) { console.log("INSIDE DB.COLLECTION: " + err) };
+        if (result == null) res2.send
+        ([{ "auth": false }]);
+        else {
+            if(mobilenumber == result.mobilenumber){
+                res2.send([{ "auth": true }])
+                ;}
+                else{
+                    res2.send([{ "auth": false }]);
+                }
+            
+
+
+            
+        }
+    });
+})
 
 // wang bin functions
 router.post('/newstaff/:staffname/:staffaddress/:permitstatus/:mobilenumber/:email/:gender/:bankdetail/:special', (req, res) => {

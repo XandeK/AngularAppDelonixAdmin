@@ -26,6 +26,6 @@ const appRoutes: Routes = [
 { path: 'login', component:LoginComponent},
 
 
-{ path: '', component:NewRoomRateComponent, pathMatch:'full'}
+{ path: '', component:LoginComponent, pathMatch:'full'}
 ];
 export const routing:ModuleWithProviders = RouterModule.forRoot(appRoutes);

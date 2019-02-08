@@ -1,13 +1,16 @@
-<h2 style="text-align: center;"><u>Room type and Rate</u></h2>
-<button class="btn" style="margin-left:40.5%; background:#8B6FC9; color:white; margin-top:15px;"><b> + CREATE NEW ROOM RATE </b></button>
-<div id="roomRates">
-  <ul>
-    <div class="card" *ngFor="let c of results" id="name">
-      <p><b>Price Name:</b> {{c.roomName}}</p>
-      <p><b>Type of Room:</b> {{c.roomType}}</p>
-      <p><b>$</b>{{c.roomRate}}<b>/night</b></p>
-      <button class="btn btn-danger" (click)="deleteRoom(c.roomName)" style="max-width:100px; margin-left:38%;">DELETE</button>
+<div id="roomRate">
+  <h2 style="text-align: center;"><u>Room type and Rate</u></h2>
+  <button class="btn" style="margin-left:40.5%; background:#8B6FC9; color:white; margin-top:15px;" routerLink="/newRoomRate"><b>
+      + CREATE NEW ROOM RATE </b></button>
+  <div id="roomRates">
+    <ul>
+      <div class="card" *ngFor="let c of results" id="name">
+        <p><b>Price Name:</b> {{c.roomName}}</p>
+        <p><b>Type of Room:</b> {{c.roomType}}</p>
+        <p><b>$</b>{{c.roomRate}}<b>/night</b></p>
+        <button class="btn btn-danger" (click)="deleteRoom(c.roomName)" style="max-width:100px; margin-left:38%;">DELETE</button>
 
-    </div>
-  </ul>
+      </div>
+    </ul>
+  </div>
 </div>
