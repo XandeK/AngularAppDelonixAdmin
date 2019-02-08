@@ -47,6 +47,28 @@ router.get('/getAllRoomRate', function (req, res) {
     db.collection('roomrate').find({}).toArray((err, results) => { res.send(results) });
 });
 
+router.get('/getstaffcecord', function(req, res){
+    db.collection('staffrecord').find().toArray( (err, results) =>
+   {res.send(results)});
+   });
 
+router.post('/newstaff/:staffname/:staffaddress/:permitstatus/:mobilenumber/:email/:gender/:bankdetail/:special', (req, res) => {
+db.collection('staffrecord').insertOne({
+
+    staffname: req.params.staffname, 
+    staffaddress: req.params.staffaddress,
+    permitstatus: req.params.permitstatus, 
+    mobilenumber: req.params.mobilenumber, 
+    email: req.params.email,
+    gender: req.params.gender, 
+    bankdetail: req.params.bankdetail, 
+    special: req.params.special
+}, (err, result) => {
+    if (err) 
+    return console.log(err);
+    // else
+    // return res.send('1');
+});
+});
 
 module.exports = router;
