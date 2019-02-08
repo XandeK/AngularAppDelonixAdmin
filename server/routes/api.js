@@ -43,6 +43,10 @@ router.post('/newRoomRate/:roomName/:roomType/:roomRate', (req, res) => {
     });
 });
 
+router.get('/getAllRoomRate', function (req, res) {
+    db.collection('roomrate').find({}).toArray((err, results) => { res.send(results) });
+});
+
 
 
 module.exports = router;

@@ -27,4 +27,9 @@ export class LoyaltyService {
     newRoomRate(roomName: string, roomType : string, roomRate : string){
     return this.http.post<any[]>('./api/newRoomRate/'+ roomName + '/' +  roomType + '/' + roomRate , {'roomName': roomName, 'roomType': roomType, 'roomRate': roomRate });
   }
+
+    //retrieve all room rate
+    getAllRoomRate() {
+      return this.http.get<any[]>('/api/getAllRoomRate');
+    }
 }
