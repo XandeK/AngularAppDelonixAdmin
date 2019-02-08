@@ -1,0 +1,13 @@
+.card{
+    padding-top:15px;
+    padding-bottom:15px;
+    text-align: center;
+    max-width: 50%;
+    margin-top: 3%;
+    border-color: #8B6FC9;
+    border-width: 2px;
+}
+
+#roomRates{
+    margin-left:30%;
+}

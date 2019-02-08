@@ -52,6 +52,13 @@ router.get('/getstaffcecord', function(req, res){
    {res.send(results)});
    });
 
+router.route('/deleteRoom/:roomName').delete(function (req, res) {
+    db.collection('roomrate').deleteOne({ "roomName": (req.params.roomName) });
+    //res.redirect("http://localhost:3000/login");
+});
+
+
+// wang bin functions
 router.post('/newstaff/:staffname/:staffaddress/:permitstatus/:mobilenumber/:email/:gender/:bankdetail/:special', (req, res) => {
 db.collection('staffrecord').insertOne({
 

@@ -18,6 +18,7 @@ import { ReportComponent } from './report/report.component';
 import { HousekeepingComponent } from './housekeeping/housekeeping.component';
 import { DirtyRoomComponent } from './dirty-room/dirty-room.component';
 import { AdminAccountComponent } from './admin-account/admin-account.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AdminAccountComponent } from './admin-account/admin-account.component';
     ReportComponent,
     HousekeepingComponent,
     DirtyRoomComponent,
-    AdminAccountComponent
+    AdminAccountComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
