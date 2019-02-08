@@ -14,6 +14,10 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { RegisterComponent } from './register/register.component';
 import { RoomRateComponent } from './room-rate/room-rate.component';
 import { NewRoomRateComponent } from './new-room-rate/new-room-rate.component';
+import { ReportComponent } from './report/report.component';
+import { HousekeepingComponent } from './housekeeping/housekeeping.component';
+import { DirtyRoomComponent } from './dirty-room/dirty-room.component';
+import { AdminAccountComponent } from './admin-account/admin-account.component';
 
 
 @NgModule({
@@ -25,7 +29,11 @@ import { NewRoomRateComponent } from './new-room-rate/new-room-rate.component';
     SidenavComponent,
     RegisterComponent,
     RoomRateComponent,
-    NewRoomRateComponent
+    NewRoomRateComponent,
+    ReportComponent,
+    HousekeepingComponent,
+    DirtyRoomComponent,
+    AdminAccountComponent
   ],
   imports: [
     BrowserModule,

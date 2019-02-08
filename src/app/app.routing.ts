@@ -6,6 +6,10 @@ import {ProductDetailComponent} from './product-detail/product-detail.component'
 import {RegisterComponent} from './register/register.component';
 import {NewRoomRateComponent} from './new-room-rate/new-room-rate.component';
 import {RoomRateComponent} from './room-rate/room-rate.component';
+import {AdminAccountComponent} from './admin-account/admin-account.component';
+import {DirtyRoomComponent} from './dirty-room/dirty-room.component';
+import {HousekeepingComponent} from './housekeeping/housekeeping.component';
+import {ReportComponent} from './report/report.component';
 
 const appRoutes: Routes = [
 { path: 'loyalty', component:LoyaltyProductsListComponent},
@@ -14,6 +18,11 @@ const appRoutes: Routes = [
 { path: 'register', component:RegisterComponent},
 { path: 'roomRate', component:RoomRateComponent},
 { path: 'newRoomRate', component:NewRoomRateComponent},
+{ path: 'admin', component:AdminAccountComponent},
+{ path: 'dirtyRoom', component:DirtyRoomComponent},
+{ path: 'housekeeping', component:HousekeepingComponent},
+{ path: 'report', component:ReportComponent},
+
 
 { path: '', component:NewRoomRateComponent, pathMatch:'full'}
 ];
