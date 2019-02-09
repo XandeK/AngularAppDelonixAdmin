@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LoyaltyService } from '../loyalty.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,7 +12,7 @@ export class ProductDetailComponent implements OnInit {
   
   result: any = [];
 
-  constructor(private route:ActivatedRoute,  private loyaltyService:LoyaltyService) { }
+  constructor(private route:ActivatedRoute,  private loyaltyService:LoyaltyService,  private router: Router) { }
 
   ngOnInit() {
     const productName = this.route.snapshot.params['productName'];
@@ -19,6 +20,10 @@ export class ProductDetailComponent implements OnInit {
       this.result = data;
       });
       
+  }
+
+  updateProduct(_id: string){
+    this.router.navigate(['/updateProduct', _id])
   }
 
 

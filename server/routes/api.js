@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+var ObjectId = require('mongodb').ObjectID;
 const MongoClient = require('mongodb').MongoClient;
 // declare axios for making http requests
 const axios = require('axios');
@@ -11,6 +12,7 @@ db = database.db('delonix');
 
 // xande functions
 
+// create new loyalty product
 router.post('/createProduct/:productImage/:productName/:productCost/:productDesc', (req, res) => {
     db.collection('loyaltyproducts').insertOne({productImage: req.params.productImage, productName: req.params.productName, productCost: req.params.productCost, productDesc: req.params.productDesc}, (err, result) => {
         if (err) 
@@ -20,22 +22,25 @@ router.post('/createProduct/:productImage/:productName/:productCost/:productDesc
     });
 });
 
+// get all loyalty products for redeemption
 router.get('/getAllProducts', function (req, res) {
     db.collection('loyaltyproducts').find({}).toArray((err, results) => { res.send(results) });
 });
-
+// search by name of product
 router.get('/findByName/:productName', function (req, res) {
     db.collection('loyaltyproducts').find({ "productName": req.params.productName }).toArray((err, results) => { res.send(results) });
 });
 
-router.get('/regAdmin/:name/:email/:password/:contact/:role', (req, res) => {
-    bcrypt.hash(req.params.password, BCRYPT_SALT_ROUNDS, function (err, hash) {
-        db.collection('admin').insertOne({ "name": req.params.name, "email": req.params.email, "password": hash, "contact": req.params.contact, "role": req.params.role }, (err, result) => {
-        });
+// NOT WORKING register for admin account
+// router.get('/regAdmin/:name/:email/:password/:contact/:role', (req, res) => {
+//     bcrypt.hash(req.params.password, BCRYPT_SALT_ROUNDS, function (err, hash) {
+//         db.collection('admin').insertOne({ "name": req.params.name, "email": req.params.email, "password": hash, "contact": req.params.contact, "role": req.params.role }, (err, result) => {
+//         });
 
-    });
-})
+//     });
+// })
 
+// create new room rate 
 router.post('/newRoomRate/:roomName/:roomType/:roomRate', (req, res) => {
     db.collection('roomrate').insertOne({roomName: req.params.roomName, roomType: req.params.roomType, roomRate: req.params.roomRate}, (err, result) => {
         if (err) 
@@ -44,21 +49,18 @@ router.post('/newRoomRate/:roomName/:roomType/:roomRate', (req, res) => {
         // return res.send('1');
     });
 });
-
+// get all room rate to display
 router.get('/getAllRoomRate', function (req, res) {
     db.collection('roomrate').find({}).toArray((err, results) => { res.send(results) });
 });
 
-router.get('/getstaffcecord', function(req, res){
-    db.collection('staffrecord').find().toArray( (err, results) =>
-   {res.send(results)});
-   });
-
+// delete room rate
 router.route('/deleteRoom/:roomName').delete(function (req, res) {
     db.collection('roomrate').deleteOne({ "roomName": (req.params.roomName) });
     //res.redirect("http://localhost:3000/login");
 });
 
+// authenticate user for login
 router.get('/authuser/:email/:mobilenumber', (req, res2) => {
 
     var email = req.params.email;
@@ -83,7 +85,15 @@ router.get('/authuser/:email/:mobilenumber', (req, res2) => {
     });
 })
 
+//update loyalty product
+router.route('/updateProduct/:_id/:productImage/:productName/:productCost/:productDesc').put(function(req, res) {
+    db.collection('loyaltyproducts').updateOne
+    ({"_id": ObjectId(req.params._id)}, { $set: {"productImage": req.params.productImage, "productName": req.params.productName,"productCost": req.params.productCost, "productDesc": req.params.productDesc} });
+    });
+
 // wang bin functions
+
+// create new staff 
 router.post('/newstaff/:staffname/:staffaddress/:permitstatus/:mobilenumber/:email/:gender/:bankdetail/:special', (req, res) => {
 db.collection('staffrecord').insertOne({
 
@@ -103,4 +113,9 @@ db.collection('staffrecord').insertOne({
 });
 });
 
+// get all staff records
+router.get('/getstaffcecord', function(req, res){
+    db.collection('staffrecord').find().toArray( (err, results) =>
+   {res.send(results)});
+   });
 module.exports = router;

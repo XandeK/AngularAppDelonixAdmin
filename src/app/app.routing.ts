@@ -11,6 +11,9 @@ import {DirtyRoomComponent} from './dirty-room/dirty-room.component';
 import {HousekeepingComponent} from './housekeeping/housekeeping.component';
 import {ReportComponent} from './report/report.component';
 import {LoginComponent} from './login/login.component';
+import { GuestComponent } from './guest/guest.component';
+import {CheckInComponent } from './check-in/check-in.component';
+import { UpdateproductComponent} from './updateproduct/updateproduct.component';
 
 const appRoutes: Routes = [
 { path: 'loyalty', component:LoyaltyProductsListComponent},
@@ -24,6 +27,9 @@ const appRoutes: Routes = [
 { path: 'housekeeping', component:HousekeepingComponent},
 { path: 'report', component:ReportComponent},
 { path: 'login', component:LoginComponent},
+{ path: 'guest', component:GuestComponent},
+{ path: 'checkIn', component:CheckInComponent},
+{ path: 'updateProduct/:_id' , component:UpdateproductComponent},
 
 
 { path: '', component:LoginComponent, pathMatch:'full'}

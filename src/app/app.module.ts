@@ -19,6 +19,9 @@ import { HousekeepingComponent } from './housekeeping/housekeeping.component';
 import { DirtyRoomComponent } from './dirty-room/dirty-room.component';
 import { AdminAccountComponent } from './admin-account/admin-account.component';
 import { LoginComponent } from './login/login.component';
+import { GuestComponent } from './guest/guest.component';
+import { CheckInComponent } from './check-in/check-in.component';
+import { UpdateproductComponent } from './updateproduct/updateproduct.component';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import { LoginComponent } from './login/login.component';
     HousekeepingComponent,
     DirtyRoomComponent,
     AdminAccountComponent,
-    LoginComponent
+    LoginComponent,
+    GuestComponent,
+    CheckInComponent,
+    UpdateproductComponent
   ],
   imports: [
     BrowserModule,

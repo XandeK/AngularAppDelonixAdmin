@@ -1,0 +1,26 @@
+<div id="updateForm">
+  <h2><u>Update Product</u></h2>
+  <br>
+  
+  <form [formGroup]="myForm" novalidate (ngSubmit)="updateProduct(myForm)">
+    <div class="form-group">
+
+      <p><input class=form-control formControlName="productImage" id="productImage" placeholder="Image" /></p>
+      <br>
+      <p><input class=form-control formControlName="productName" id="productName" placeholder="Name" /></p>
+      <br>
+      <p><input type="email" class=form-control formControlName="productCost" id="productCost" placeholder="Cost of product" /></p>
+      <br>
+      <p><input class=form-control formControlName="productDesc" id="productDesc" placeholder="Product Descsription" /></p>
+
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+      <p><button id="submitButton" class="btn btn-primary" type="submit"><b>UPDATE PRODUCT</b></button></p>
+    </div>
+  </form>
+
+</div>

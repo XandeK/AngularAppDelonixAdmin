@@ -17,6 +17,11 @@ export class LoyaltyService {
   getAllProducts() {
     return this.http.get<any[]>('/api/getAllProducts');
   }
+  
+  //Update product
+  updateProduct(_id: string, productImage: string, productName: string, productCost: string, productDesc: string) {
+    return this.http.put<any[]>('./api/updateProduct/' + _id + "/" + productImage + "/" + productName + "/" + productCost + "/" + productDesc, {"productImage": productImage, "productName": productName, "productCost": productCost, "productDesc": productDesc});
+    }
 
   //search by name
   findByName(productName: string) {
@@ -42,4 +47,6 @@ export class LoyaltyService {
   authUser(email: string, mobilenumber: string) {
     return this.http.get('/api/authuser/' + email + "/" + mobilenumber);
   }
+
+
 }

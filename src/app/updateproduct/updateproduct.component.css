@@ -1,0 +1,15 @@
+#updateForm {
+    margin-left: 10%;
+    margin-top: 10%;
+    margin-right:20%;
+    text-align:center;
+}
+
+#submitButton{
+    border-radius: 15px;
+    background-color: #8B6FC9;
+    color: white;
+    border:none;
+    height: 40px;
+    width: 500px;
+}

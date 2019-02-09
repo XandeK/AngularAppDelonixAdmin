@@ -20,12 +20,14 @@ export class LoginComponent implements OnInit {
       mobilenumber: '',
     });
   }
+
   onSubmit() {
     this.loyaltyService.authUser(this.myForm.value.email, this.myForm.value.mobilenumber).subscribe(data => {
       this.results = data;
       
       if (this.results[0].auth) {
         this.nav.show()
+        sessionStorage.setItem('email', this.myForm.value.email);
         this.router.navigateByUrl('/roomRate');
    
       }
