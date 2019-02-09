@@ -1,0 +1,31 @@
+
+<div id="staffrecord">
+    <h1 style="text-align: center"><b><u>Staff Record</u></b></h1>
+
+
+  
+  <form [formGroup]="myForm" style="margin-top: 40px; width: 70%; margin-left: 10%; margin-right: 10%" novalidate (ngSubmit)="newstaff(myForm)">
+  
+    <p><b>Name:</b></p>
+    <p><input class=form-control formControlName="staffname" id="staffname" placeholder="Staff name" /></p>
+    <p><b>Address:</b></p>
+    <p><input class=form-control formControlName="staffaddress" id="staffaddress" placeholder="staff address" /></p>
+    <p><b>Permit:</b></p>
+    <p><input class=form-control formControlName="permitstatus" id="permitstatus" placeholder="permit status" /></p>
+    <p><b>Mobile:</b></p>
+    <p><input class=form-control formControlName="mobilenumber" id="mobilenumber" placeholder="mobile number" /></p>
+    <p><b>Email:</b></p>
+    <p><input class=form-control formControlName="email" id="email" placeholder="email" /></p>
+    <p><b>Gender:</b></p>
+    <p><input class=form-control formControlName="gender" id="gender" placeholder="gender" /></p>
+    <p><b>Bank detail:</b></p>
+    <p><input class=form-control formControlName="bankdetail" id="bankdetail" placeholder="bank detail" /></p>
+    <p><b>Special:</b></p>
+    <p><input class=form-control formControlName="special" id="special" placeholder="special" /></p>
+  
+  
+    <br>
+    <br>
+    <p><button id="newstaff" class="btn btn-primary" type="submit">CREATE</button></p>
+  </form>
+</div>

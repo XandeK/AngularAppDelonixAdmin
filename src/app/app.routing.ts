@@ -14,6 +14,11 @@ import {LoginComponent} from './login/login.component';
 import { GuestComponent } from './guest/guest.component';
 import {CheckInComponent } from './check-in/check-in.component';
 import { UpdateproductComponent} from './updateproduct/updateproduct.component';
+import { NewStaffComponent } from './new-staff/new-staff.component';
+import { HousekeepingReportComponent } from './housekeeping-report/housekeeping-report.component';
+import { NewRoomReportComponent } from './new-room-report/new-room-report.component';
+import { NewHousekeepingReportComponent } from './new-housekeeping-report/new-housekeeping-report.component'
+import { NewDirtyRoomComponent } from './new-dirty-room/new-dirty-room.component';
 
 const appRoutes: Routes = [
 { path: 'loyalty', component:LoyaltyProductsListComponent},
@@ -30,6 +35,12 @@ const appRoutes: Routes = [
 { path: 'guest', component:GuestComponent},
 { path: 'checkIn', component:CheckInComponent},
 { path: 'updateProduct/:_id' , component:UpdateproductComponent},
+{ path: 'newStaff' , component:NewStaffComponent},
+{ path: 'housekeepingReport' , component:HousekeepingReportComponent},
+{ path: 'newRoomReport' , component:NewRoomReportComponent},
+{ path: 'newHousekeepingReport' , component:NewHousekeepingReportComponent},
+{ path: 'newDirtyRoom' , component:NewDirtyRoomComponent},
+
 
 
 { path: '', component:LoginComponent, pathMatch:'full'}

@@ -1,0 +1,25 @@
+
+<div id="newhousekeepingreport">
+    <h1><b><u>Housekeeping report</u></b></h1>
+<br><br>
+
+  
+  <form [formGroup]="myForm" novalidate (ngSubmit)="newhousekeepingreport(myForm)">
+  
+    <p><b>Date:</b></p>
+    <p><input class=form-control formControlName="date" id="date" placeholder="Date" /></p>
+    <p><b>Job Type:</b></p>
+    <select class=form-control formControlName="jobtype" id="jobtype" placeholder="Job type">
+        <option value="Estate Maintenance">Estate Maintenance</option>
+        <option value="Room Maintenance">Room Maintenance</option>
+        <option value="General Maintenance">General Maintenance</option>
+      </select><br>
+    <p><b>Staff Number:</b></p>
+    <p><input class=form-control formControlName="staffnumber" id="staffnumber" placeholder="Staff Number" /></p>
+  
+  
+    <br>
+    <br>
+    <p><button id="newhousekeepingreport" class="btn btn-primary" type="submit">CREATE</button></p>
+  </form>
+</div>

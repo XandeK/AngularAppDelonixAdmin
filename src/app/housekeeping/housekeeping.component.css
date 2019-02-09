@@ -1,0 +1,31 @@
+#createBtn{
+    float: left;
+    width: 15%;
+  }
+
+  #button:hover{
+    cursor: pointer;
+  }
+
+  #createBtn button{
+    background: #8B6FC9;
+    color: white;
+    margin-left: 20px;
+    border-radius: 0%;
+  }
+
+  #updateBtn{
+    float: left;
+    width: 15%;
+  }
+
+  #button:hover{
+    cursor: pointer;
+  }
+
+  #updateBtn button{
+    background: #8B6FC9;
+    color: white;
+    margin-left: 20px;
+    border-radius: 0%;
+  }

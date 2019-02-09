@@ -114,8 +114,84 @@ db.collection('staffrecord').insertOne({
 });
 
 // get all staff records
-router.get('/getstaffcecord', function(req, res){
+router.get('/getstaffrecord', function(req, res){
     db.collection('staffrecord').find().toArray( (err, results) =>
    {res.send(results)});
    });
-module.exports = router;
+
+
+
+
+
+// new room report
+router.post('/newroomreport/:date/:roomtype/:guestnumber', (req, res) => {
+    db.collection('roomreport').insertOne({
+    
+        date: req.params.date, 
+        roomtype: req.params.roomtype,
+        guestnumber: req.params.guestnumber, 
+        
+    }, (err, result) => {
+        if (err) 
+        return console.log(err);
+        // else
+        // return res.send('1');
+    });
+    });
+    
+    // get all room report
+    router.get('/getroomreport', function(req, res){
+        db.collection('roomreport').find().toArray( (err, results) =>
+       {res.send(results)});
+       });
+
+
+
+
+// new housekeeping report
+router.post('/newhousekeepingreport/:date/:jobtype/:staffnumber', (req, res) => {
+    db.collection('housekeepingreport').insertOne({
+    
+        date: req.params.date, 
+        jobtype: req.params.jobtype,
+        staffnumber: req.params.staffnumber, 
+        
+    }, (err, result) => {
+        if (err) 
+        return console.log(err);
+        // else
+        // return res.send('1');
+    });
+    });
+    
+    // get all housekeeping records
+    router.get('/gethousekeepingreport', function(req, res){
+        db.collection('housekeepingreport').find().toArray( (err, results) =>
+       {res.send(results)});
+       });
+
+
+
+       // new dirty room
+       router.post('/newdirtyroom/:roomnumber', (req, res) => {
+        db.collection('dirtyroom').insertOne({
+    
+            roomnumber: req.params.roomnumber, 
+       
+            
+        }, (err, result) => {
+            if (err) 
+            return console.log(err);
+            // else
+            // return res.send('1');
+        });
+        });
+    
+        // get all dirty room
+            router.get('/getdirtyroom', function(req, res){
+            db.collection('dirtyroom').find().toArray( (err, results) =>
+        {res.send(results)});
+        });
+
+       
+    module.exports = router;

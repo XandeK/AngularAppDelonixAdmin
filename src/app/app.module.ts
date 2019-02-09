@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
-
 import { LoyaltyProductsListComponent } from './loyalty-products-list/loyalty-products-list.component';
 import { NewProductLoyaltyComponent } from './new-product-loyalty/new-product-loyalty.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
@@ -22,6 +21,11 @@ import { LoginComponent } from './login/login.component';
 import { GuestComponent } from './guest/guest.component';
 import { CheckInComponent } from './check-in/check-in.component';
 import { UpdateproductComponent } from './updateproduct/updateproduct.component';
+import { NewStaffComponent } from './new-staff/new-staff.component';
+import { HousekeepingReportComponent } from './housekeeping-report/housekeeping-report.component';
+import { NewRoomReportComponent } from './new-room-report/new-room-report.component';
+import { NewHousekeepingReportComponent } from './new-housekeeping-report/new-housekeeping-report.component';
+import { NewDirtyRoomComponent } from './new-dirty-room/new-dirty-room.component';
 
 
 @NgModule({
@@ -41,7 +45,12 @@ import { UpdateproductComponent } from './updateproduct/updateproduct.component'
     LoginComponent,
     GuestComponent,
     CheckInComponent,
-    UpdateproductComponent
+    UpdateproductComponent,
+    NewStaffComponent,
+    HousekeepingReportComponent,
+    NewRoomReportComponent,
+    NewHousekeepingReportComponent,
+    NewDirtyRoomComponent
   ],
   imports: [
     BrowserModule,

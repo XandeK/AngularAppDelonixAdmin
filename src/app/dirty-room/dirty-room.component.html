@@ -1,3 +1,23 @@
-<p>
-  dirty-room works!
-</p>
+<h2 style="text-align: center">Dirty room</h2>
+<div id="createBtn">
+
+  <button class="form-control" id="button" style="float:right;" routerLink ="/newDirtyRoom"><b> + CREATE NEW </b></button>
+
+</div>
+  <div id="dispAll">
+    <ul  id="Grid">
+        <ul style="margin-top: 40px; width: 70%; margin-left: 10%; margin-right: 10%" *ngFor="let c of records">
+            <div id="card" class="card">
+                <div class="card-body">
+
+                    <h5>Room: {{ c.roomnumber }}</h5>
+                    
+
+                </div>
+            </div>
+          </ul>
+    </ul>
+</div>
+<br>
+
+

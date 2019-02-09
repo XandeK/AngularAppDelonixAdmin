@@ -1,0 +1,26 @@
+
+<div id="newroomreport">
+  <h1><b><u>Room report</u></b></h1>
+<br><br>
+
+  
+  <form [formGroup]="myForm" novalidate (ngSubmit)="newroomreport(myForm)">
+  
+    <p><b>Date:</b></p>
+    <p><input class=form-control formControlName="date" id="date" placeholder="Date" /></p>
+    <p><b>Room Type:</b></p>
+    <select class=form-control formControlName="roomtype" id="roomtype" placeholder="Room type">
+      <option value="Single Bed Room">Single Bed Room</option>
+      <option value="Dual Bed Room">Dual Bed Room</option>
+      <option value="Deluxe Bed Room">Deluxe Bed Room</option>
+    </select>
+    <br>
+    <p><b>Guest Number:</b></p>
+    <p><input class=form-control formControlName="guestnumber" id="guestnumber" placeholder="Guest Number" /></p>
+  
+  
+    <br>
+    <br>
+    <p><button id="newroomreport" class="btn btn-primary" type="submit">CREATE</button></p>
+  </form>
+</div>

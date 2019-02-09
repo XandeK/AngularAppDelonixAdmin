@@ -1,0 +1,16 @@
+
+<div id="dirtyroom">
+    <h1 style="text-align: center"><b><u>New dirty room</u></b></h1>
+
+
+  
+  <form [formGroup]="myForm" style="margin-top: 40px; width: 70%; margin-left: 10%; margin-right: 10%" novalidate (ngSubmit)="newdirtyroom(myForm)">
+  
+    <p><b>Room number:</b></p>
+    <p><input class=form-control formControlName="roomnumber" id="roomnumber" placeholder="Dirty room number" /></p>
+
+    <br>
+    <br>
+    <p><button id="newdirtyroom" class="btn btn-primary" type="submit">CREATE</button></p>
+  </form>
+</div>

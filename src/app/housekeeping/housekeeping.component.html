@@ -1,3 +1,26 @@
-<p>
-  housekeeping works!
-</p>
+<h2 style="text-align: center">Assign Housekeeping</h2>
+<div id="createBtn">
+
+  <button class="form-control" id="button" style="float:right;" routerLink ="/dirtyRoom"><b>View dirty rooms</b></button>
+
+</div>
+
+
+  <div id="dispAll">
+    <ul  id="Grid">
+        <ul style="margin-top: 40px; width: 70%; margin-left: 10%; margin-right: 10%" *ngFor="let c of records" >
+            <div  id="card" class="card">
+                <div class="card-body">
+
+                    <h5>Staff: {{ c.staffname }}</h5>
+                    <p><b>Assign room:</b></p>
+                    <select class=form-control placeholder="Dirty Room" >
+                            <option *ngFor="let a of results" value="{{ a.roomnuber }}">{{ a.roomnumber }}</option>
+                            </select>
+                </div>
+            </div>
+         </ul>
+    </ul>
+</div>
+<p style="text-align: center"><button id="update" class="btn btn-primary" (click)="update()">CREATE</button></p>
+

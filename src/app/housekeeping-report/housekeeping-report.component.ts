@@ -4,24 +4,21 @@ import { FormBuilder, FormGroup } from
 '@angular/forms';
 import { Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-report',
-  templateUrl: './report.component.html',
-  styleUrls: ['./report.component.css']
+  selector: 'app-housekeeping-report',
+  templateUrl: './housekeeping-report.component.html',
+  styleUrls: ['./housekeeping-report.component.css']
 })
-export class ReportComponent implements OnInit {
-
+export class HousekeepingReportComponent implements OnInit {
   records: any = [];
   myForm: FormGroup;
-
+  
   constructor(private housekeepingService: HousekeepingService,private fb: FormBuilder,private router: Router) { }
-
   ngOnInit() {
-    this.myForm = this.fb.group({date: '',roomtype: '',guestnumber: '',
+    this.myForm = this.fb.group({date: '',jobtype: '',staffnumber: '',
     });
       // Retrieve posts from the API
-   this.housekeepingService.getroomreport().subscribe(records => {
+   this.housekeepingService.gethousekeepingreport().subscribe(records => {
     this.records = records;
    });
   }

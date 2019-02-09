@@ -1,3 +1,26 @@
-<p>
-  report works!
-</p>
+<h2 style="text-align: center">Room Occupancy Report</h2>
+<div id="createBtn">
+
+  <button class="form-control" id="button" style="float:left;" routerLink ="/housekeepingReport"><b>Housekeeping Report</b></button>
+
+  <button class="form-control" id="button" style="float:left;" routerLink ="/newRoomReport"><b>New report</b></button>
+
+</div>
+
+
+  <div id="dispAll">
+    <ul  id="Grid">
+        <ul style="margin-top: 40px; width: 70%; margin-left: 10%; margin-right: 10%" *ngFor="let c of records">
+            <div style="margin-left: 10%; margin-right: 10%;" id="card" class="card">
+                <div class="card-body">
+
+                    <h5>Date: {{ c.date }}</h5>
+                    <h5>Roome type: {{ c.roomtype }}</h5>
+                    <h5>Guest number: {{ c.guestnumber }}</h5>
+                  
+                </div>
+            </div>
+          </ul>
+    </ul>
+</div>
+
